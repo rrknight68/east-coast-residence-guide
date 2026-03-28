@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anchor Auto Rentals</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#3AAA6E;--green-dark:#2E8B57;--green-light:#E8F7EF;--charcoal:#222222;--gray:#555555;--light:#F7F7F7;--border:#E8E8E8;--white:#FFFFFF;--gold:#C9A84C;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--charcoal);background:var(--white);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;backdrop-filter:blur(8px);}
+.nav-logo{display:flex;flex-direction:column;align-items:flex-start;cursor:pointer;}
+.nav-logo-name{font-family:'DM Serif Display',serif;font-size:22px;color:var(--charcoal);line-height:1;}
+.nav-logo-mark{display:flex;align-items:center;width:100%;margin-top:3px;}
+.nav-logo-line{flex:1;height:1px;background:var(--green);opacity:0.35;}
+.nav-logo-diamond{width:8px;height:8px;background:var(--green);transform:rotate(45deg);flex-shrink:0;}
+.nav-logo-sub{font-size:8px;letter-spacing:3px;color:var(--green);margin-top:3px;font-weight:500;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--gray);text-decoration:none;cursor:pointer;transition:color .2s;}
+.nav-links a:hover{color:var(--green);}
+.nav-cta{background:var(--green);color:white;border:none;padding:10px 24px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;}
+.nav-cta:hover{background:var(--green-dark);}
+.nav-admin-btn{background:var(--charcoal);color:white;border:none;padding:10px 18px;font-size:11px;font-weight:500;cursor:pointer;letter-spacing:1.5px;font-family:'DM Mono',monospace;transition:background .2s;margin-left:8px;}
+.nav-admin-btn:hover{background:#444;}
+#hero{padding-top:68px;min-height:100vh;display:flex;align-items:center;background:var(--white);position:relative;overflow:hidden;}
+.hero-bg{position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:'DM Serif Display',serif;font-size:260px;color:var(--green);opacity:0.04;line-height:1;pointer-events:none;user-select:none;}
+.hero-inner{max-width:1200px;margin:0 auto;padding:80px 48px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--green-light);padding:6px 14px;margin-bottom:28px;}
+.hero-tag span{font-size:11px;font-weight:600;color:var(--green);letter-spacing:2px;}
+.hero-dot{width:6px;height:6px;background:var(--green);border-radius:50%;}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:56px;line-height:1.05;margin-bottom:24px;}
+.hero-h1 em{font-style:italic;color:var(--green);}
+.hero-p{font-size:17px;color:var(--gray);line-height:1.7;margin-bottom:36px;font-weight:300;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-p{background:var(--green);color:white;border:none;padding:15px 36px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-p:hover{background:var(--green-dark);transform:translateY(-1px);}
+.btn-s{background:transparent;color:var(--charcoal);border:1.5px solid var(--border);padding:15px 36px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-s:hover{border-color:var(--green);color:var(--green);}
+.hero-trust{display:flex;gap:24px;margin-top:36px;flex-wrap:wrap;}
+.ti{display:flex;align-items:center;gap:8px;}
+.ti span{font-size:12px;color:var(--gray);font-weight:500;}
+.hero-right{display:flex;flex-direction:column;gap:16px;}
+.hcard{background:var(--white);border:1px solid var(--border);padding:28px;position:relative;transition:border-color .2s;}
+.hcard:hover{border-color:var(--green);}
+.hcard-accent{position:absolute;top:0;left:0;width:3px;height:100%;background:var(--green);}
+.hcard h3{font-family:'DM Serif Display',serif;font-size:30px;color:var(--green);margin-bottom:4px;}
+.hcard p{font-size:13px;color:var(--gray);}
+.hcard-label{font-size:10px;letter-spacing:2px;color:var(--gray);font-weight:600;font-family:'DM Mono',monospace;margin-bottom:8px;}
+section{padding:100px 48px;}
+.si{max-width:1200px;margin:0 auto;}
+.stag{font-size:10px;letter-spacing:3px;color:var(--green);font-weight:600;font-family:'DM Mono',monospace;margin-bottom:16px;}
+.sh2{font-family:'DM Serif Display',serif;font-size:44px;line-height:1.1;margin-bottom:16px;}
+.sp{font-size:16px;color:var(--gray);line-height:1.7;font-weight:300;max-width:560px;}
+#how{background:var(--light);}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;}
+.step{background:var(--white);padding:44px 36px;}
+.step-n{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);letter-spacing:2px;margin-bottom:24px;}
+.step-icon{width:44px;height:44px;border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.step-icon svg{width:20px;height:20px;stroke:var(--green);fill:none;stroke-width:1.5;}
+.step h3{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:12px;}
+.step p{font-size:14px;color:var(--gray);line-height:1.6;font-weight:300;}
+#why{background:var(--white);}
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px;}
+.wi{padding:36px;border:1px solid var(--border);display:flex;gap:20px;transition:border-color .2s;}
+.wi:hover{border-color:var(--green);}
+.wn{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);font-weight:500;padding-top:3px;min-width:24px;}
+.wi h3{font-size:16px;font-weight:600;margin-bottom:8px;}
+.wi p{font-size:14px;color:var(--gray);line-height:1.6;font-weight:300;}
+#requirements{background:var(--charcoal);}
+#requirements .stag{color:var(--green);}
+#requirements .sh2{color:var(--white);}
+#requirements .sp{color:#999;}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#333;margin-top:60px;}
+.ri{background:var(--charcoal);padding:32px 28px;}
+.rcheck{width:28px;height:28px;border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.rcheck svg{width:14px;height:14px;stroke:var(--green);fill:none;stroke-width:2.5;}
+.ri h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px;}
+.ri p{font-size:13px;color:#888;line-height:1.5;font-weight:300;}
+.rnote{margin-top:40px;padding:24px 28px;border-left:3px solid var(--green);background:rgba(58,170,110,0.08);}
+.rnote p{font-size:13px;color:#999;line-height:1.6;font-style:italic;}
+#pricing{background:var(--white);}
+.pwrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:60px;align-items:start;}
+.pcard{border:1.5px solid var(--green);padding:48px;position:relative;}
+.pcard-lbl{position:absolute;top:-12px;left:28px;background:var(--green);color:white;font-size:10px;letter-spacing:2px;padding:4px 12px;font-weight:600;font-family:'DM Mono',monospace;}
+.pamt{font-family:'DM Serif Display',serif;font-size:64px;color:var(--charcoal);line-height:1;}
+.pper{font-size:14px;color:var(--gray);margin-top:4px;margin-bottom:28px;}
+.pline{width:40px;height:2px;background:var(--green);margin-bottom:28px;}
+.pinc{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.pr{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray);}
+.pdot{width:5px;height:5px;background:var(--green);border-radius:50%;flex-shrink:0;}
+.pinfo{padding:32px;background:var(--light);display:flex;flex-direction:column;gap:0;}
+.pirow{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);}
+.pirow:last-child{border-bottom:none;}
+.pilabel{font-size:13px;color:var(--gray);}
+.pival{font-size:13px;font-weight:600;font-family:'DM Mono',monospace;}
+#vehicles{background:var(--light);}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px;}
+.vcard{background:var(--white);padding:44px;display:flex;flex-direction:column;gap:20px;}
+.vbadge{display:inline-flex;background:var(--green-light);color:var(--green);font-size:10px;letter-spacing:2px;padding:5px 12px;font-weight:600;font-family:'DM Mono',monospace;}
+.vcard h3{font-family:'DM Serif Display',serif;font-size:28px;}
+.vcard p{font-size:14px;color:var(--gray);line-height:1.6;font-weight:300;}
+.vspecs{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.spec{background:var(--light);padding:12px 16px;}
+.spec-l{font-size:10px;color:var(--gray);letter-spacing:1.5px;font-family:'DM Mono',monospace;margin-bottom:4px;}
+.spec-v{font-size:13px;font-weight:600;}
+#faq{background:var(--white);}
+.fwrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:60px;}
+.flist{display:flex;flex-direction:column;}
+.fi{border-bottom:1px solid var(--border);}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:20px;}
+.fq span{font-size:15px;font-weight:500;}
+.ficon{width:20px;height:20px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.ficon.open{background:var(--green);border-color:var(--green);}
+.ficon svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.5;transition:transform .2s;}
+.ficon.open svg{stroke:white;transform:rotate(45deg);}
+.fa{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.fa.open{max-height:200px;}
+.fa p{padding:0 0 20px;font-size:14px;color:var(--gray);line-height:1.7;font-weight:300;}
+.fcta{background:var(--green-light);padding:48px;display:flex;flex-direction:column;gap:20px;align-self:start;position:sticky;top:100px;}
+.fcta h3{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;}
+.fcta p{font-size:14px;color:var(--gray);line-height:1.6;font-weight:300;}
+#ctabanner{background:var(--green);padding:80px 48px;text-align:center;}
+#ctabanner h2{font-family:'DM Serif Display',serif;font-size:44px;color:white;margin-bottom:16px;}
+#ctabanner p{font-size:16px;color:rgba(255,255,255,0.8);margin-bottom:32px;font-weight:300;}
+.btn-w{background:white;color:var(--green);border:none;padding:16px 40px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-w:hover{background:var(--charcoal);color:white;}
+#apply{background:var(--charcoal);padding:100px 48px;}
+.apinner{max-width:800px;margin:0 auto;}
+.apinner .stag{color:var(--green);}
+.apinner .sh2{color:var(--white);margin-bottom:48px;}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.ff{display:flex;flex-direction:column;gap:8px;}
+.ff.full{grid-column:1/-1;}
+.ff label{font-size:11px;letter-spacing:2px;color:#888;font-weight:600;font-family:'DM Mono',monospace;}
+.ff input,.ff select,.ff textarea{background:#2a2a2a;border:1px solid #333;color:white;padding:14px 16px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--green);}
+.ff textarea{resize:vertical;min-height:100px;}
+.ff select option{background:#2a2a2a;}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px;}
+.footer-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+.footer-links a{font-size:13px;color:var(--gray);text-decoration:none;margin-left:24px;transition:color .2s;}
+.footer-links a:hover{color:var(--green);}
+.footer-disc{max-width:1200px;margin:24px auto 0;padding-top:24px;border-top:1px solid var(--border);}
+.footer-disc p{font-size:11px;color:#bbb;line-height:1.5;}
+
+/* ═══ ADMIN ═══ */
+#adminOverlay{display:none;position:fixed;inset:0;z-index:1000;background:#0f0f0f;flex-direction:row;}
+#adminOverlay.open{display:flex;}
+.aside{width:240px;background:#161616;border-right:1px solid #2a2a2a;display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;}
+.aside-logo{padding:24px 20px;border-bottom:1px solid #2a2a2a;}
+.aside-logo-name{font-family:'DM Serif Display',serif;font-size:16px;color:white;}
+.aside-logo-sub{font-size:9px;color:var(--green);letter-spacing:2px;font-family:'DM Mono',monospace;margin-top:2px;}
+.aside-nav{padding:16px 0;flex:1;}
+.aside-sec{padding:8px 20px 4px;font-size:9px;color:#444;letter-spacing:2px;font-family:'DM Mono',monospace;}
+.aside-item{display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:#888;font-size:13px;transition:all .15s;border-right:2px solid transparent;}
+.aside-item:hover{background:#1e1e1e;color:white;}
+.aside-item.active{background:#1e1e1e;color:var(--green);border-right-color:var(--green);}
+.aside-item svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.5;flex-shrink:0;}
+.aside-close{padding:16px 20px;border-top:1px solid #2a2a2a;cursor:pointer;color:#555;font-size:12px;display:flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;transition:color .2s;}
+.aside-close:hover{color:#999;}
+.amain{flex:1;overflow-y:auto;display:flex;flex-direction:column;}
+.aheader{padding:28px 40px;border-bottom:1px solid #2a2a2a;background:#161616;}
+.aheader h1{font-family:'DM Serif Display',serif;font-size:24px;color:white;}
+.aheader p{font-size:12px;color:#555;font-family:'DM Mono',monospace;margin-top:2px;}
+.acontent{padding:40px;flex:1;}
+.apanel{display:none;}
+.apanel.active{display:block;}
+.acard{background:#161616;border:1px solid #2a2a2a;padding:28px;margin-bottom:20px;}
+.acard h2{font-family:'DM Serif Display',serif;font-size:20px;color:white;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.atag{font-size:10px;background:var(--green);color:white;padding:2px 8px;font-family:'DM Mono',monospace;font-weight:400;}
+.alabel{font-size:10px;color:#555;letter-spacing:2px;font-family:'DM Mono',monospace;margin-bottom:8px;}
+.aval{font-size:14px;color:white;margin-bottom:20px;line-height:1.6;}
+.brand-preview{background:white;padding:48px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:24px;}
+.brand-name{font-family:'DM Serif Display',serif;font-size:52px;color:var(--charcoal);}
+.brand-sep{display:flex;align-items:center;width:220px;margin:4px auto;}
+.brand-line{flex:1;height:1px;background:var(--green);opacity:0.35;}
+.brand-diamond{width:12px;height:12px;background:var(--green);transform:rotate(45deg);flex-shrink:0;}
+.brand-sub{font-size:11px;letter-spacing:8px;color:var(--green);font-weight:600;}
+.brand-tagline{font-size:10px;color:#aaa;letter-spacing:2px;}
+.swatches{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+.swatch{display:flex;flex-direction:column;gap:6px;}
+.sw-color{width:72px;height:72px;border:1px solid #2a2a2a;}
+.sw-name{font-size:10px;color:#888;font-family:'DM Mono',monospace;}
+.sw-hex{font-size:10px;color:#555;font-family:'DM Mono',monospace;}
+.bcard-wrap{display:flex;gap:20px;flex-wrap:wrap;}
+.bcard{width:330px;height:185px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;position:relative;overflow:hidden;}
+.bcard-light{background:white;border:1px solid #333;}
+.bcard-dark{background:var(--charcoal);}
+.bcard-corner{position:absolute;bottom:0;right:0;width:50px;height:50px;background:var(--green);opacity:0.1;}
+.bc-name{font-family:'DM Serif Display',serif;font-size:17px;}
+.bcard-light .bc-name{color:var(--charcoal);}
+.bcard-dark .bc-name{color:white;}
+.bc-sep{display:flex;align-items:center;margin:3px 0;}
+.bc-line{flex:1;height:1px;background:var(--green);opacity:0.35;}
+.bc-diamond{width:6px;height:6px;background:var(--green);transform:rotate(45deg);flex-shrink:0;}
+.bc-sub{font-size:7px;letter-spacing:3px;color:var(--green);font-weight:600;}
+.bc-owner{font-size:13px;font-weight:600;}
+.bcard-light .bc-owner{color:var(--charcoal);}
+.bcard-dark .bc-owner{color:white;}
+.bc-title{font-size:9px;letter-spacing:1px;color:#888;margin-top:2px;}
+.bc-contact{display:flex;flex-direction:column;gap:3px;}
+.bc-contact span{font-size:10px;color:#888;font-family:'DM Mono',monospace;}
+.atable{width:100%;border-collapse:collapse;}
+.atable th{background:#1e1e1e;color:#888;font-size:10px;letter-spacing:2px;font-family:'DM Mono',monospace;padding:12px 16px;text-align:left;border-bottom:1px solid #2a2a2a;}
+.atable td{padding:13px 16px;font-size:13px;color:#ccc;border-bottom:1px solid #1e1e1e;vertical-align:top;}
+.atable tr:hover td{background:#1a1a1a;}
+.amt{font-family:'DM Mono',monospace;text-align:right;}
+.pos{color:var(--green);font-family:'DM Mono',monospace;text-align:right;}
+.neg{color:#e06060;font-family:'DM Mono',monospace;text-align:right;}
+.row-total td{background:#1e1e1e;font-weight:600;color:white;border-top:1px solid #333;}
+.row-sub td{background:#181818;color:#888;font-size:12px;font-weight:500;}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:24px;}
+.kpi{background:#161616;border:1px solid #2a2a2a;padding:20px 24px;}
+.kpi-l{font-size:9px;color:#555;letter-spacing:2px;font-family:'DM Mono',monospace;margin-bottom:8px;}
+.kpi-v{font-family:'DM Serif Display',serif;font-size:28px;color:white;}
+.kpi-s{font-size:11px;color:#555;margin-top:4px;font-family:'DM Mono',monospace;}
+.tabs{display:flex;gap:2px;margin-bottom:24px;border-bottom:1px solid #2a2a2a;}
+.tab{padding:10px 20px;font-size:12px;font-family:'DM Mono',monospace;color:#555;cursor:pointer;border:none;background:transparent;letter-spacing:1px;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s;}
+.tab.active{color:var(--green);border-bottom-color:var(--green);}
+.tabp{display:none;}
+.tabp.active{display:block;}
+.tsec{margin-bottom:28px;}
+.tsec-title{font-size:11px;color:var(--green);letter-spacing:2px;font-family:'DM Mono',monospace;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #2a2a2a;}
+.titem{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #1a1a1a;}
+.tchk{width:16px;height:16px;border:1px solid #333;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-top:2px;transition:all .15s;}
+.tchk.on{background:var(--green);border-color:var(--green);}
+.tchk.on::after{content:'✓';font-size:10px;color:white;}
+.ttxt{font-size:13px;color:#ccc;line-height:1.4;flex:1;}
+.ttxt.done{text-decoration:line-through;color:#444;}
+.tpri{font-size:9px;font-family:'DM Mono',monospace;padding:2px 8px;flex-shrink:0;}
+.sbadge{display:inline-flex;padding:3px 10px;font-size:10px;font-family:'DM Mono',monospace;letter-spacing:1px;}
+.citem{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:#1a1a1a;margin-bottom:2px;gap:16px;}
+.cname{font-size:14px;color:white;font-weight:500;}
+.cdesc{font-size:12px;color:#555;margin-top:2px;}
+.cbtn{padding:6px 14px;font-size:11px;font-family:'DM Mono',monospace;border:none;cursor:pointer;letter-spacing:1px;transition:all .15s;}
+.cbtn-dl{background:var(--green);color:white;}
+.cbtn-dl:hover{background:var(--green-dark);}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.hero-inner,.steps,.wgrid,.rgrid,.pwrap,.vgrid,.fwrap,.kpis,.fgrid{grid-template-columns:1fr;}section{padding:60px 20px;}.aside{display:none;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="go('hero')">
+    <div class="nav-logo-name">Anchor</div>
+    <div class="nav-logo-mark"><div class="nav-logo-line"></div><div class="nav-logo-diamond"></div><div class="nav-logo-line"></div></div>
+    <div class="nav-logo-sub">AUTO RENTALS</div>
+  </div>
+  <div class="nav-links">
+    <a onclick="go('how')">How It Works</a>
+    <a onclick="go('vehicles')">Vehicles</a>
+    <a onclick="go('pricing')">Pricing</a>
+    <a onclick="go('requirements')">Requirements</a>
+    <a onclick="go('faq')">FAQ</a>
+  </div>
+  <div style="display:flex;gap:8px">
+    <button class="nav-cta" onclick="go('apply')">Apply Now</button>
+    <button class="nav-admin-btn" onclick="openAdmin()">ADMIN</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg">ANCHOR</div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><div class="hero-dot"></div><span>SOUTHWEST FLORIDA</span></div>
+      <h1 class="hero-h1">Weekly Rentals for <em>Working Drivers</em></h1>
+      <p class="hero-p">Get a reliable, affordable vehicle for DoorDash, Uber Eats, and eligible rideshare work. Fast approval, simple weekly pricing, no long-term commitment.</p>
+      <div class="hero-btns">
+        <button class="btn-p" onclick="go('apply')">Apply Now</button>
+        <button class="btn-s" onclick="go('vehicles')">See Available Cars</button>
+      </div>
+      <div class="hero-trust">
+        <div class="ti"><div class="hero-dot"></div><span>Fast Approval</span></div>
+        <div class="ti"><div class="hero-dot"></div><span>$325/week</span></div>
+        <div class="ti"><div class="hero-dot"></div><span>Reliable Cars</span></div>
+        <div class="ti"><div class="hero-dot"></div><span>No Long Commitment</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hcard"><div class="hcard-accent"></div><div class="hcard-label">Starting At</div><h3>$325<span style="font-size:16px;color:#888">/wk</span></h3><p>Simple weekly pricing — no hidden fees</p></div>
+      <div class="hcard"><div class="hcard-accent"></div><div class="hcard-label">Security Deposit</div><h3>$750</h3><p>Refundable, held per agreement terms</p></div>
+      <div class="hcard"><div class="hcard-accent"></div><div class="hcard-label">Approval Time</div><h3>24–48 hrs</h3><p>Most applicants hear back within 48 hours</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="si">
+    <div class="stag">Process</div>
+    <h2 class="sh2">Get Approved in 3 Simple Steps</h2>
+    <p class="sp">No complicated paperwork. A clear path to getting on the road and earning.</p>
+    <div class="steps">
+      <div class="step"><div class="step-n">STEP 01</div><div class="step-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Apply Online</h3><p>Complete our short application. Tell us how you plan to use the vehicle and your target start date.</p></div>
+      <div class="step"><div class="step-n">STEP 02</div><div class="step-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>Get Approved</h3><p>We verify your license, insurance, and deposit eligibility. Most approvals within 24–48 hours.</p></div>
+      <div class="step"><div class="step-n">STEP 03</div><div class="step-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><h3>Pick Up &amp; Drive</h3><p>Sign your agreement, complete vehicle inspection together, and start driving the same day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="si">
+    <div class="stag">Why Anchor</div>
+    <h2 class="sh2">Built for Drivers Who Need a Car to Work</h2>
+    <p class="sp">Not a traditional rental company. Built specifically for gig economy drivers.</p>
+    <div class="wgrid">
+      <div class="wi"><div class="wn">01</div><div><h3>Affordable Weekly Payments</h3><p>Starting at $325/week. Clear pricing, no surprise charges.</p></div></div>
+      <div class="wi"><div class="wn">02</div><div><h3>Work-Ready Vehicles</h3><p>Every car pre-inspected, mechanically sound, cold AC — non-negotiable in Florida.</p></div></div>
+      <div class="wi"><div class="wn">03</div><div><h3>No Long-Term Lock-In</h3><p>Weekly renewals. No 12-month contracts. Stop with 48 hours notice.</p></div></div>
+      <div class="wi"><div class="wn">04</div><div><h3>Screened &amp; Structured</h3><p>Real LLC. Real contracts. Real commercial insurance. A legitimate rental operation.</p></div></div>
+      <div class="wi"><div class="wn">05</div><div><h3>Delivery-Approved Use</h3><p>Commercial delivery use explicitly permitted. DoorDash and Uber Eats are our primary market.</p></div></div>
+      <div class="wi"><div class="wn">06</div><div><h3>Fast Onboarding</h3><p>Apply, get approved, pick up your car. Designed to get you earning as fast as possible.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="si">
+    <div class="stag">Requirements</div>
+    <h2 class="sh2">What You Need to Get Approved</h2>
+    <p class="sp">Simple, clear requirements. No surprises at pickup.</p>
+    <div class="rgrid">
+      <div class="ri"><div class="rcheck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Valid Driver's License</h3><p>Florida or other state license in good standing.</p></div>
+      <div class="ri"><div class="rcheck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Proof of Insurance</h3><p>Current personal auto insurance. Declaration page required.</p></div>
+      <div class="ri"><div class="rcheck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Security Deposit</h3><p>$750 refundable deposit collected at pickup.</p></div>
+      <div class="ri"><div class="rcheck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Signed Agreement</h3><p>Formal rental agreement reviewed and signed before release.</p></div>
+      <div class="ri"><div class="rcheck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Weekly Payment Ability</h3><p>Ability to make weekly payments. Autopay preferred.</p></div>
+      <div class="ri"><div class="rcheck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Emergency Contact</h3><p>Name, relationship, and phone number on file.</p></div>
+    </div>
+    <div class="rnote"><p>Vehicle eligibility for rideshare platforms (Uber, Lyft) depends on the specific vehicle and your local market. Confirming platform eligibility is the renter's sole responsibility. Delivery use (DoorDash, Uber Eats) is the most straightforward fit for our fleet.</p></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="si">
+    <div class="stag">Pricing</div>
+    <h2 class="sh2">Straightforward Weekly Pricing</h2>
+    <p class="sp">No financing. No surprises. A reliable car and a clear weekly payment.</p>
+    <div class="pwrap">
+      <div class="pcard">
+        <div class="pcard-lbl">WEEKLY RENTAL</div>
+        <div class="pamt">$325</div>
+        <div class="pper">per week · billed weekly in advance</div>
+        <div class="pline"></div>
+        <div class="pinc">
+          <div class="pr"><div class="pdot"></div>Reliable inspected vehicle</div>
+          <div class="pr"><div class="pdot"></div>Commercial delivery use permitted</div>
+          <div class="pr"><div class="pdot"></div>Flexible weekly renewal</div>
+          <div class="pr"><div class="pdot"></div>No long-term contract</div>
+          <div class="pr"><div class="pdot"></div>GPS-equipped for security</div>
+        </div>
+        <button class="btn-p" onclick="go('apply')" style="width:100%">Apply Now</button>
+      </div>
+      <div class="pinfo">
+        <div class="pirow"><span class="pilabel">Security Deposit</span><span class="pival">$750</span></div>
+        <div class="pirow"><span class="pilabel">Deposit Refundable</span><span class="pival">Yes</span></div>
+        <div class="pirow"><span class="pilabel">Minimum Term</span><span class="pival">1 Week</span></div>
+        <div class="pirow"><span class="pilabel">Notice to Return</span><span class="pival">48 Hours</span></div>
+        <div class="pirow"><span class="pilabel">Fuel Included</span><span class="pival">No</span></div>
+        <div class="pirow"><span class="pilabel">Tickets / Tolls</span><span class="pival">Renter Responsible</span></div>
+        <div class="pirow"><span class="pilabel">Insurance Required</span><span class="pival">Yes — Renter's Own</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vehicles">
+  <div class="si">
+    <div class="stag">Fleet</div>
+    <h2 class="sh2">Reliable Vehicles for Working Drivers</h2>
+    <p class="sp">A curated fleet of Toyota vehicles selected for durability and fuel efficiency.</p>
+    <div class="vgrid">
+      <div class="vcard"><div class="vbadge">AVAILABLE</div><h3>Toyota Corolla</h3><p>Compact, fuel-efficient, extremely reliable. Preferred for DoorDash and Uber Eats. Lower fuel cost per mile means more earnings per shift.</p><div class="vspecs"><div class="spec"><div class="spec-l">Years</div><div class="spec-v">2009–2014</div></div><div class="spec"><div class="spec-l">Mileage</div><div class="spec-v">100K–160K</div></div><div class="spec"><div class="spec-l">AC</div><div class="spec-v">Cold — Required</div></div><div class="spec"><div class="spec-l">Title</div><div class="spec-v">Clean</div></div></div></div>
+      <div class="vcard"><div class="vbadge">AVAILABLE</div><h3>Toyota Camry</h3><p>Midsize comfort, spacious interior, proven reliability. Great for longer shifts. Still fuel-efficient and easy to maintain over time.</p><div class="vspecs"><div class="spec"><div class="spec-l">Years</div><div class="spec-v">2008–2014</div></div><div class="spec"><div class="spec-l">Mileage</div><div class="spec-v">100K–160K</div></div><div class="spec"><div class="spec-l">AC</div><div class="spec-v">Cold — Required</div></div><div class="spec"><div class="spec-l">Title</div><div class="spec-v">Clean</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="si">
+    <div class="stag">FAQ</div>
+    <h2 class="sh2">Questions? We Have Answers.</h2>
+    <div class="fwrap">
+      <div class="flist" id="faqList"></div>
+      <div class="fcta">
+        <h3>Ready to Get on the Road?</h3>
+        <p>Apply today and get approved for a reliable weekly rental built for working drivers. Most approvals within 24–48 hours.</p>
+        <button class="btn-p" onclick="go('apply')">Start Your Application</button>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;">
+          <span style="font-size:12px;color:var(--gray)">📞 Call or Text: [INSERT NUMBER]</span>
+          <span style="font-size:12px;color:var(--gray)">✉ [INSERT EMAIL]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="ctabanner">
+  <h2>Need a Car to Start Earning?</h2>
+  <p>Apply today — reliable weekly rentals for working drivers in Southwest Florida.</p>
+  <button class="btn-w" onclick="go('apply')">Apply Now</button>
+</div>
+
+<section id="apply">
+  <div class="apinner">
+    <div class="stag">Apply</div>
+    <h2 class="sh2">Start Your Application</h2>
+    <div class="fgrid">
+      <div class="ff"><label>First Name</label><input type="text" placeholder="First name"></div>
+      <div class="ff"><label>Last Name</label><input type="text" placeholder="Last name"></div>
+      <div class="ff"><label>Phone Number</label><input type="tel" placeholder="(239) 555-0100"></div>
+      <div class="ff"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+      <div class="ff"><label>Driver's License #</label><input type="text" placeholder="License number"></div>
+      <div class="ff"><label>Insurance Carrier</label><input type="text" placeholder="Progressive, Geico, etc."></div>
+      <div class="ff full"><label>Intended Vehicle Use</label>
+        <select><option value="">Select use...</option><option>DoorDash Delivery</option><option>Uber Eats Delivery</option><option>Other Delivery Platform</option><option>Rideshare (Uber/Lyft)</option><option>Multiple Uses</option></select>
+      </div>
+      <div class="ff full"><label>When Do You Need the Vehicle?</label><input type="text" placeholder="As soon as possible / specific date"></div>
+      <div class="ff full"><label>Additional Notes</label><textarea placeholder="Anything else we should know..."></textarea></div>
+    </div>
+    <div style="margin-top:28px">
+      <button class="btn-p" style="padding:16px 48px" onclick="alert('Application submitted! We will contact you within 24–48 hours.')">Submit Application</button>
+    </div>
+    <p style="font-size:12px;color:#666;margin-top:12px;line-height:1.5">Submitting this application does not guarantee approval. We will contact you within 24–48 hours to confirm eligibility and next steps.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-i">
+    <div>
+      <div style="font-family:'DM Serif Display',serif;font-size:18px">Anchor Auto Rentals</div>
+      <div style="font-size:11px;color:#bbb;margin-top:4px">Southwest Florida · Reliable Weekly Rentals</div>
+    </div>
+    <div class="footer-links">
+      <a onclick="go('how')">How It Works</a>
+      <a onclick="go('requirements')">Requirements</a>
+      <a onclick="go('pricing')">Pricing</a>
+      <a onclick="go('vehicles')">Vehicles</a>
+      <a onclick="go('faq')">FAQ</a>
+      <a onclick="go('apply')">Apply</a>
+    </div>
+    <div style="font-size:12px;color:#bbb;font-family:'DM Mono',monospace">© 2025 Anchor Auto Rentals LLC</div>
+  </div>
+  <div class="footer-disc">
+    <p>Vehicle eligibility for rideshare platforms varies by market and vehicle. Confirming platform eligibility is the applicant's sole responsibility. Anchor Auto Rentals LLC is a Florida limited liability company. All rentals subject to driver screening, insurance verification, and deposit requirements. This website is for informational purposes only.</p>
+  </div>
+</footer>
+
+<!-- ADMIN OVERLAY -->
+<div id="adminOverlay">
+  <div class="aside">
+    <div class="aside-logo">
+      <div class="aside-logo-name">Anchor</div>
+      <div class="aside-logo-sub">ADMIN PORTAL</div>
+    </div>
+    <div class="aside-nav">
+      <div class="aside-sec">Brand</div>
+      <div class="aside-item active" onclick="switchPanel(this,'branding')"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>Branding</div>
+      <div class="aside-item" onclick="switchPanel(this,'bizcard')"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Business Card</div>
+      <div class="aside-sec">Business</div>
+      <div class="aside-item" onclick="switchPanel(this,'bizmodel')"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>Business Model</div>
+      <div class="aside-item" onclick="switchPanel(this,'budget')"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Budget</div>
+      <div class="aside-item" onclick="switchPanel(this,'pnl')"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Profit &amp; Loss</div>
+      <div class="aside-sec">Operations</div>
+      <div class="aside-item" onclick="switchPanel(this,'tasks')"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Setup Tasks</div>
+      <div class="aside-item" onclick="switchPanel(this,'contracts')"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Contracts</div>
+    </div>
+    <div class="aside-close" onclick="closeAdmin()"><svg style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Close Admin</div>
+  </div>
+  <div class="amain">
+    <div class="aheader"><h1 id="aTitle">Branding</h1><p id="aSub">Brand assets, colors, and typography</p></div>
+    <div class="acontent">
+
+      <!-- BRANDING -->
+      <div id="panel-branding" class="apanel active">
+        <div class="acard">
+          <h2>Primary Logo <span class="atag">FINAL</span></h2>
+          <div class="brand-preview">
+            <div class="brand-name">Anchor</div>
+            <div class="brand-sep"><div class="brand-line"></div><div class="brand-diamond"></div><div class="brand-line"></div></div>
+            <div class="brand-sub">AUTO RENTALS</div>
+            <div class="brand-tagline" style="margin-top:8px">Reliable Weekly Rentals for Working Drivers</div>
+          </div>
+          <div class="alabel">Primary Colors</div>
+          <div class="swatches">
+            <div class="swatch"><div class="sw-color" style="background:#3AAA6E"></div><div class="sw-name">Mint Green</div><div class="sw-hex">#3AAA6E</div></div>
+            <div class="swatch"><div class="sw-color" style="background:#222222"></div><div class="sw-name">Charcoal</div><div class="sw-hex">#222222</div></div>
+            <div class="swatch"><div class="sw-color" style="background:#FFFFFF;border:1px solid #333"></div><div class="sw-name">White</div><div class="sw-hex">#FFFFFF</div></div>
+            <div class="swatch"><div class="sw-color" style="background:#E8F7EF"></div><div class="sw-name">Green Tint</div><div class="sw-hex">#E8F7EF</div></div>
+            <div class="swatch"><div class="sw-color" style="background:#555555"></div><div class="sw-name">Gray</div><div class="sw-hex">#555555</div></div>
+          </div>
+          <div class="alabel">Typography</div>
+          <div class="aval" style="font-family:'DM Serif Display',serif;font-size:26px">DM Serif Display — Logo &amp; Headlines</div>
+          <div class="aval" style="font-size:16px">DM Sans — Body, UI, Buttons</div>
+          <div class="aval" style="font-family:'DM Mono',monospace;font-size:14px">DM Mono — Numbers, Labels, Tags</div>
+          <div class="alabel">Logo Usage Rules</div>
+          <div class="aval">Use on white background only. Minimum size: 120px wide. Maintain clear space equal to the height of the diamond separator on all sides. Do not recolor, distort, or add effects.</div>
+        </div>
+      </div>
+
+      <!-- BUSINESS CARD -->
+      <div id="panel-bizcard" class="apanel">
+        <div class="acard">
+          <h2>Business Card Designs</h2>
+          <div class="bcard-wrap">
+            <div class="bcard bcard-light">
+              <div class="bcard-corner"></div>
+              <div><div class="bc-name">Anchor</div><div class="bc-sep"><div class="bc-line"></div><div class="bc-diamond"></div><div class="bc-line"></div></div><div class="bc-sub">AUTO RENTALS</div></div>
+              <div><div class="bc-owner">[Owner Name]</div><div class="bc-title">OWNER · ANCHOR AUTO RENTALS LLC</div></div>
+              <div class="bc-contact"><span>📞 [Phone]</span><span>✉ [Email]</span><span>🌐 anchorautorentals.com</span></div>
+            </div>
+            <div class="bcard bcard-dark">
+              <div><div class="bc-name">Anchor</div><div class="bc-sep"><div class="bc-line"></div><div class="bc-diamond"></div><div class="bc-line"></div></div><div class="bc-sub">AUTO RENTALS</div></div>
+              <div><div class="bc-owner">[Owner Name]</div><div class="bc-title">OWNER · ANCHOR AUTO RENTALS LLC</div></div>
+              <div class="bc-contact"><span>📞 [Phone]</span><span>✉ [Email]</span><span>🌐 anchorautorentals.com</span></div>
+            </div>
+          </div>
+          <div style="margin-top:20px"><div class="alabel">Print Specs</div><div class="aval">3.5" × 2" standard · 300 DPI · Bleed 0.125" · Fonts: DM Serif Display + DM Sans + DM Mono</div></div>
+        </div>
+      </div>
+
+      <!-- BUSINESS MODEL -->
+      <div id="panel-bizmodel" class="apanel">
+        <div class="kpis">
+          <div class="kpi"><div class="kpi-l">Launch Fleet</div><div class="kpi-v">3</div><div class="kpi-s">Vehicles</div></div>
+          <div class="kpi"><div class="kpi-l">Weekly Rent</div><div class="kpi-v">$325</div><div class="kpi-s">Per vehicle</div></div>
+          <div class="kpi"><div class="kpi-l">Annual NOI</div><div class="kpi-v">$25K</div><div class="kpi-s">3-car fleet</div></div>
+          <div class="kpi"><div class="kpi-l">Cash-on-Cash</div><div class="kpi-v">~129%</div><div class="kpi-s">Avg return</div></div>
+        </div>
+        <div class="acard">
+          <h2>Model Overview</h2>
+          <div class="alabel">Concept</div>
+          <div class="aval">Anchor Auto Rentals acquires durable, depreciated Toyota vehicles (Corolla/Camry) in the $5,000–$7,000 range and rents them on a week-to-week basis to gig economy drivers. Each vehicle is managed as a cash-flow asset with formal contracts, commercial insurance, GPS tracking, deposit requirements, and strict driver screening.</div>
+          <div class="alabel">Buy Box</div>
+          <div class="aval">Toyota Corolla 2009–2014 · Toyota Camry 2008–2014 · Price: $5,000–$7,000 · Mileage: 100K–160K max · Clean title required · Cold AC required · Pre-purchase inspection mandatory · No salvage/rebuilt titles</div>
+          <div class="alabel">Hold Period &amp; Exit</div>
+          <div class="aval">18–24 months per vehicle. Estimated resale $2,000–$3,000. Proceeds reinvested into newer fleet vehicle.</div>
+          <div class="alabel">Phase 2 Entity Structure (3+ Vehicles)</div>
+          <div class="aval">Anchor Assets LLC (owns vehicles) → leases to Anchor Operations LLC (renter-facing, collects payments) at $200/month/vehicle. Separate bank accounts, bookkeeping, and tax filings. Real intercompany lease required.</div>
+        </div>
+        <div class="acard">
+          <h2>Per-Vehicle Annual Economics</h2>
+          <table class="atable">
+            <thead><tr><th>Line Item</th><th class="amt">Amount</th></tr></thead>
+            <tbody>
+              <tr><td>Weekly Rent</td><td class="pos">$325</td></tr>
+              <tr><td>Occupancy Rate</td><td class="amt">90%</td></tr>
+              <tr><td>Annual Gross Revenue</td><td class="pos">$15,210</td></tr>
+              <tr class="row-sub"><td colspan="2">Annual Operating Expenses</td></tr>
+              <tr><td>Oil Changes (~8K miles, $120 each)</td><td class="neg">($960)</td></tr>
+              <tr><td>Tires Reserve</td><td class="neg">($900)</td></tr>
+              <tr><td>Brakes Reserve</td><td class="neg">($800)</td></tr>
+              <tr><td>General Repairs Reserve</td><td class="neg">($1,200)</td></tr>
+              <tr><td>Commercial Insurance (share)</td><td class="neg">($3,000)</td></tr>
+              <tr class="row-total"><td>Annual Net Operating Income</td><td class="pos">$8,350</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BUDGET -->
+      <div id="panel-budget" class="apanel">
+        <div class="acard">
+          <h2>3-Car Launch Budget <span class="atag">STARTUP</span></h2>
+          <table class="atable">
+            <thead><tr><th>Item</th><th>Notes</th><th class="amt">Cost</th></tr></thead>
+            <tbody>
+              <tr class="row-sub"><td colspan="3">Vehicle Acquisition</td></tr>
+              <tr><td>Vehicle 1 — Toyota Corolla</td><td>2009–2014 target</td><td class="neg">($5,990)</td></tr>
+              <tr><td>Vehicle 2 — Toyota Camry</td><td>2008–2014 target</td><td class="neg">($6,500)</td></tr>
+              <tr><td>Vehicle 3 — Corolla/Camry</td><td>2009–2014 target</td><td class="neg">($7,000)</td></tr>
+              <tr class="row-sub"><td colspan="3">Setup Costs</td></tr>
+              <tr><td>Pre-Purchase Inspections</td><td>3 × $100</td><td class="neg">($300)</td></tr>
+              <tr><td>GPS Tracking Devices</td><td>3 × $75</td><td class="neg">($225)</td></tr>
+              <tr><td>LLC Formation + Legal</td><td>FL filing + attorney</td><td class="neg">($750)</td></tr>
+              <tr><td>Commercial Insurance — Deposit</td><td>50% of annual</td><td class="neg">($4,500)</td></tr>
+              <tr><td>Website + Domain + Hosting</td><td>Year 1</td><td class="neg">($400)</td></tr>
+              <tr><td>Initial Marketing</td><td>Facebook, flyers</td><td class="neg">($200)</td></tr>
+              <tr class="row-sub"><td colspan="3">Reserve</td></tr>
+              <tr><td>Operating Reserve</td><td>3–6 month buffer</td><td class="neg">($3,500)</td></tr>
+              <tr class="row-total"><td>Total Startup Capital Required</td><td></td><td class="neg">($29,365)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="acard">
+          <h2>Deposit Liability Account <span class="atag">HELD SEPARATELY</span></h2>
+          <table class="atable">
+            <thead><tr><th>Renter</th><th class="amt">Deposit</th></tr></thead>
+            <tbody>
+              <tr><td>Renter 1</td><td class="pos">$750</td></tr>
+              <tr><td>Renter 2</td><td class="pos">$750</td></tr>
+              <tr><td>Renter 3</td><td class="pos">$750</td></tr>
+              <tr class="row-total"><td>Total Deposits Held</td><td class="pos">$2,250</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top:16px;padding:16px;background:#1a1a1a;border-left:3px solid var(--gold)">
+            <p style="font-size:12px;color:#888">Deposits are liabilities — not operating income. Must be held in a dedicated, separate account. Return within 30 days of rental termination per agreement terms.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- P&L -->
+      <div id="panel-pnl" class="apanel">
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab(this,'monthly')">Monthly</button>
+          <button class="tab" onclick="switchTab(this,'annual')">Annual — 3 Cars</button>
+          <button class="tab" onclick="switchTab(this,'scale')">Scale to 10 Cars</button>
+        </div>
+        <div id="tab-monthly" class="tabp active">
+          <div class="acard">
+            <h2>Monthly P&amp;L — Stabilized (3 Cars)</h2>
+            <table class="atable">
+              <thead><tr><th>Line Item</th><th class="amt">Per Car / Mo</th><th class="amt">3 Cars / Mo</th></tr></thead>
+              <tbody>
+                <tr class="row-sub"><td colspan="3">Revenue</td></tr>
+                <tr><td>Gross Rent (90% occupancy)</td><td class="pos">$1,268</td><td class="pos">$3,803</td></tr>
+                <tr class="row-sub"><td colspan="3">Expenses</td></tr>
+                <tr><td>Oil Changes</td><td class="neg">($80)</td><td class="neg">($240)</td></tr>
+                <tr><td>Tires Reserve</td><td class="neg">($75)</td><td class="neg">($225)</td></tr>
+                <tr><td>Brakes Reserve</td><td class="neg">($67)</td><td class="neg">($200)</td></tr>
+                <tr><td>Repairs Reserve</td><td class="neg">($100)</td><td class="neg">($300)</td></tr>
+                <tr><td>Commercial Insurance</td><td class="neg">($250)</td><td class="neg">($750)</td></tr>
+                <tr class="row-total"><td>Net Monthly Operating Income</td><td class="pos">$696</td><td class="pos">$2,088</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="tab-annual" class="tabp">
+          <div class="acard">
+            <h2>Annual P&amp;L — 3 Cars</h2>
+            <table class="atable">
+              <thead><tr><th>Vehicle</th><th>Purchase</th><th class="amt">Gross Rev</th><th class="amt">Expenses</th><th class="amt">NOI</th><th class="amt">CoC Return</th></tr></thead>
+              <tbody>
+                <tr><td>Vehicle 1 — Corolla</td><td>$5,990</td><td class="pos">$15,210</td><td class="neg">($6,860)</td><td class="pos">$8,350</td><td class="pos">139%</td></tr>
+                <tr><td>Vehicle 2 — Camry</td><td>$6,500</td><td class="pos">$15,210</td><td class="neg">($6,860)</td><td class="pos">$8,350</td><td class="pos">128%</td></tr>
+                <tr><td>Vehicle 3 — Corolla</td><td>$7,000</td><td class="pos">$15,210</td><td class="neg">($6,860)</td><td class="pos">$8,350</td><td class="pos">119%</td></tr>
+                <tr class="row-total"><td>TOTAL</td><td>$19,490</td><td class="pos">$45,630</td><td class="neg">($20,580)</td><td class="pos">$25,050</td><td class="pos">~129%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="tab-scale" class="tabp">
+          <div class="acard">
+            <h2>Scale to 10 Vehicles</h2>
+            <table class="atable">
+              <thead><tr><th>Fleet</th><th>Timeline</th><th class="amt">Annual Gross</th><th class="amt">Annual Exp</th><th class="amt">Annual NOI</th><th class="amt">Monthly NOI</th></tr></thead>
+              <tbody>
+                <tr><td>3 Cars</td><td>Launch</td><td class="pos">$45,630</td><td class="neg">($20,580)</td><td class="pos">$25,050</td><td class="pos">$2,088</td></tr>
+                <tr><td>5 Cars</td><td>~Mo 6</td><td class="pos">$76,050</td><td class="neg">($34,300)</td><td class="pos">$41,750</td><td class="pos">$3,479</td></tr>
+                <tr><td>7 Cars</td><td>~Mo 12</td><td class="pos">$106,470</td><td class="neg">($48,020)</td><td class="pos">$58,450</td><td class="pos">$4,871</td></tr>
+                <tr class="row-total"><td>10 Cars</td><td>~Mo 24</td><td class="pos">$152,100</td><td class="neg">($68,600)</td><td class="pos">$83,500</td><td class="pos">$6,958</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TASKS -->
+      <div id="panel-tasks" class="apanel">
+        <div class="acard">
+          <h2>90-Day Setup Tasks <span class="atag">LAUNCH CHECKLIST</span></h2>
+          <div id="taskCont"></div>
+        </div>
+      </div>
+
+      <!-- CONTRACTS -->
+      <div id="panel-contracts" class="apanel">
+        <div class="acard">
+          <h2>Contracts &amp; Documents <span class="atag">REVIEW REQUIRED</span></h2>
+          <div style="margin-bottom:16px;padding:16px;background:#1a1a1a;border-left:3px solid var(--gold)">
+            <p style="font-size:12px;color:#888">All documents marked DRAFT require review by a licensed Florida attorney before use with any renter.</p>
+          </div>
+          <div id="contractsCont"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const faqs=[{q:"How much is the weekly rental?",a:"Weekly rentals start at $325/week. Clear pricing, no hidden fees or surprise charges."},{q:"How much is the deposit?",a:"The standard security deposit is $750, collected at vehicle pickup. Refundable per your agreement terms — not a fee."},{q:"What do I need to get approved?",a:"A valid driver's license, current proof of auto insurance, and ability to pay your deposit and first week's rent at pickup."},{q:"How fast can I get approved?",a:"Most applicants hear back within 24–48 hours of a complete application. Have your license and insurance information ready."},{q:"Can I use the car for DoorDash or Uber Eats?",a:"Yes. Commercial delivery use including DoorDash and Uber Eats is explicitly permitted in your rental agreement."},{q:"Can I use the car for Uber or Lyft?",a:"It depends on the specific vehicle and your local market. Platform eligibility is your responsibility to confirm with the platform directly."},{q:"Is insurance required?",a:"Yes. You must have a current personal auto insurance policy before we release any vehicle. Non-negotiable."},{q:"What if the car needs a repair?",a:"Contact us immediately. Do not drive a vehicle with a serious mechanical issue. We maintain a repair reserve for major failures."},{q:"What happens if I miss a payment?",a:"Contact us before you miss it. If you communicate with us we can work with you. Silence and non-payment triggers repossession under the agreement."},{q:"Is there a GPS tracker in the car?",a:"Yes, disclosed in your rental agreement. Used for fleet management and vehicle recovery. Standard condition of rental."}];
+const fl=document.getElementById('faqList');
+faqs.forEach((f,i)=>{fl.innerHTML+=`<div class="fi"><div class="fq" onclick="tfaq(${i})"><span>${f.q}</span><div class="ficon" id="fi${i}"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="fa" id="fa${i}"><p>${f.a}</p></div></div>`;});
+function tfaq(i){document.getElementById('fa'+i).classList.toggle('open');document.getElementById('fi'+i).classList.toggle('open');}
+
+const taskData={"Week 1 — Foundation":[{t:"Form Anchor Auto Rentals LLC (sunbiz.org)",p:"urgent"},{t:"Obtain EIN from IRS.gov — free, takes 10 minutes",p:"urgent"},{t:"Open business checking account — separate from personal",p:"urgent"},{t:"Open deposit holding account — dedicated separate account",p:"urgent"},{t:"Begin commercial auto insurance quotes — 3+ carriers",p:"urgent"}],"Week 2 — Insurance & Infrastructure":[{t:"Bind commercial auto insurance policy — 3-vehicle minimum",p:"urgent"},{t:"Set up bookkeeping — QuickBooks Simple Start",p:"high"},{t:"Register Florida sales/use tax if applicable in your county",p:"high"},{t:"Have rental agreement reviewed by Florida attorney",p:"urgent"},{t:"Order 3 GPS tracking devices",p:"high"},{t:"Create digital renter file template",p:"medium"}],"Week 3 — Vehicle Sourcing":[{t:"Search Facebook Marketplace + Craigslist for buy box vehicles",p:"urgent"},{t:"Source independent mechanic for pre-purchase inspections",p:"urgent"},{t:"Evaluate 5–10 candidate vehicles",p:"high"},{t:"Complete pre-purchase inspection before any offer finalized",p:"urgent"},{t:"Purchase Vehicle 1 by end of Week 3",p:"urgent"},{t:"Install and test GPS on Vehicle 1",p:"high"}],"Week 4 — Go Live":[{t:"Photograph Vehicle 1 — all sides, interior, odometer",p:"high"},{t:"Post Vehicle 1 on Facebook Marketplace",p:"high"},{t:"Post in local SW Florida delivery driver Facebook groups",p:"high"},{t:"Launch website with application form live",p:"high"},{t:"Respond to all inquiries within 2 hours",p:"medium"}],"Weeks 5–12 — Operations":[{t:"Screen first applicant — verify license and insurance",p:"high"},{t:"Complete full onboarding checklist before vehicle release",p:"urgent"},{t:"Collect $750 deposit into deposit account",p:"urgent"},{t:"Complete vehicle condition report — both parties sign",p:"urgent"},{t:"Purchase Vehicle 2 by Week 6",p:"high"},{t:"Purchase Vehicle 3 by Week 8",p:"high"},{t:"Fund maintenance reserve account — monthly accrual",p:"medium"},{t:"Schedule 30-day vehicle inspections for all active rentals",p:"medium"}]};
+const tc=document.getElementById('taskCont');
+const ts={};
+Object.entries(taskData).forEach(([sec,items])=>{
+  let h=`<div class="tsec"><div class="tsec-title">${sec}</div>`;
+  const cm={'urgent':'#e06060','high':'var(--gold)','medium':'var(--green)'};
+  items.forEach((item,i)=>{const k=sec+i;ts[k]=false;h+=`<div class="titem"><div class="tchk" id="tc${k.replace(/\W/g,'')}" onclick="tt('${k.replace(/\W/g,'')}')"></div><div class="ttxt" id="tt${k.replace(/\W/g,'')}">${item.t}</div><div class="tpri" style="background:${cm[item.p]}22;color:${cm[item.p]}">${item.p.toUpperCase()}</div></div>`;});
+  h+='</div>';tc.innerHTML+=h;
+});
+function tt(k){const c=document.getElementById('tc'+k);const t=document.getElementById('tt'+k);c.classList.toggle('on');t.classList.toggle('done');}
+
+const contracts=[{n:"Vehicle Rental Agreement",d:"Primary agreement covering all rental terms, renter obligations, GPS consent, default, and repossession.",s:"DRAFT",sc:"#e06060"},{n:"Driver Onboarding Checklist",d:"20-item pre-release verification checklist. Completed at every vehicle pickup.",s:"OPERATIONAL",sc:"var(--green)"},{n:"Vehicle Condition Report",d:"Signed by both parties at pickup and return. Photographic documentation required.",s:"OPERATIONAL",sc:"var(--green)"},{n:"Intercompany Vehicle Lease",d:"Assets LLC to Operations LLC lease at $200/month per vehicle. Required for Phase 2 structure.",s:"DRAFT",sc:"#e06060"},{n:"Insurance Verification Checklist",d:"Confirms renter insurance is current and properly documented before vehicle release.",s:"OPERATIONAL",sc:"var(--green)"},{n:"Maintenance Acknowledgment",d:"Documents renter maintenance obligations — fluid checks, oil schedule, reporting requirements.",s:"OPERATIONAL",sc:"var(--green)"},{n:"Payment Policy & Default Notice",d:"Payment schedule, late payment consequences, and repossession escalation procedure.",s:"DRAFT",sc:"#e06060"},{n:"GPS Tracking Disclosure",d:"Standalone consent form for GPS tracking. Can be incorporated into main rental agreement.",s:"OPERATIONAL",sc:"var(--green)"}];
+const cc=document.getElementById('contractsCont');
+contracts.forEach(c=>{cc.innerHTML+=`<div class="citem"><div style="flex:1"><div class="cname">${c.n}</div><div class="cdesc">${c.d}</div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px"><span class="sbadge" style="background:${c.sc}22;color:${c.sc}">${c.s}</span><button class="cbtn cbtn-dl" onclick="alert('In production this downloads the document.')">Download</button></div></div>`;});
+
+function go(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+function openAdmin(){document.getElementById('adminOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeAdmin(){document.getElementById('adminOverlay').classList.remove('open');document.body.style.overflow='';}
+
+const panelMeta={branding:['Branding','Brand assets, colors, and typography'],bizcard:['Business Card','Print-ready business card designs'],bizmodel:['Business Model','Core economics and operational framework'],budget:['Budget','Startup capital and cost breakdown'],pnl:['Profit & Loss','Revenue, expenses, and scaling projections'],tasks:['Setup Tasks','90-day launch checklist with priority flags'],contracts:['Contracts','All required documents and signing status']};
+
+function switchPanel(el,id){
+  document.querySelectorAll('.apanel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.aside-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('aTitle').textContent=panelMeta[id][0];
+  document.getElementById('aSub').textContent=panelMeta[id][1];
+}
+
+function switchTab(el,id){
+  document.querySelectorAll('.tabp').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
