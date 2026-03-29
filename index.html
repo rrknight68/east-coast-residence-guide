@@ -3,40 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>East Coast Family Office Residence Guide — Vantage Point Investments</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>SW + SE Florida Family Office Residence Guide — Vantage Point Investments</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0D2B4E;--navy-dk:#071D35;--gold:#C89A3A;--gold-lt:#E8C97A;--cream:#F9F7F3;--cream-dk:#F0EDE6;--slate:#6B7B8D;--slate-lt:#8C9BAA;--green:#1D9E75;--border:#E2DDD5;--white:#FFFFFF;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);line-height:1.6;}
-.page{max-width:900px;margin:0 auto;padding:0 24px;}
-.section{padding:48px 0;border-bottom:1px solid var(--border);}
+.page{max-width:960px;margin:0 auto;padding:0 24px;}
+.section{padding:52px 0;border-bottom:1px solid var(--border);}
 .section:last-of-type{border-bottom:none;}
 .logo{display:flex;flex-direction:column;align-items:center;gap:2px;padding:48px 0 12px;}
 .logo-name{font-family:'Cinzel',serif;font-size:20px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);}
 .logo-row{display:flex;align-items:center;gap:6px;}
 .logo-rule{width:28px;height:1px;background:var(--gold);}
 .logo-inv{font-family:'Cinzel',serif;font-size:9px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--navy);text-align:center;margin-bottom:6px;}
-.page-sub{font-size:14px;color:var(--slate);text-align:center;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;}
-.stag{font-family:'DM Mono',monospace;font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.pt{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--navy);text-align:center;margin-bottom:6px;}
+.ps{font-family:'Lora',serif;font-size:15px;color:var(--slate);text-align:center;margin-bottom:48px;max-width:640px;margin-left:auto;margin-right:auto;font-style:italic;}
+.stag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
 .sh{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:8px;}
-.ssub{font-size:14px;color:var(--slate);margin-bottom:28px;line-height:1.7;max-width:700px;}
-table{width:100%;border-collapse:collapse;margin-bottom:24px;border:1px solid var(--border);overflow:hidden;}
-th{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-lt);background:var(--cream-dk);padding:10px 14px;text-align:left;}
-td{font-size:13px;padding:10px 14px;border-top:1px solid var(--border);color:var(--navy);vertical-align:top;}
-td.mono{font-family:'DM Mono',monospace;font-size:12px;}
+.ssub{font-family:'Lora',serif;font-size:14px;color:var(--slate);margin-bottom:28px;line-height:1.7;max-width:720px;}
+table{width:100%;border-collapse:collapse;margin-bottom:24px;border:1px solid var(--border);}
+th{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-lt);background:var(--cream-dk);padding:10px 12px;text-align:left;}
+td{font-size:12px;padding:10px 12px;border-top:1px solid var(--border);color:var(--navy);vertical-align:top;}
+td.mono{font-family:'DM Mono',monospace;font-size:11px;}
 td.gold{color:var(--gold);font-weight:500;}
 tr.hl td{background:rgba(29,158,117,0.04);}
-.card-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:24px;overflow:hidden;}
-.card-grid.two{grid-template-columns:1fr 1fr;}
+.cg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:24px;overflow:hidden;}
+.cg.two{grid-template-columns:1fr 1fr;}
+.cg.five{grid-template-columns:1fr;}
 .card{background:var(--white);padding:20px 18px;}
-.card-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.card-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:6px;}
-.card-body{font-size:12px;color:var(--slate);line-height:1.6;}
-.source{font-family:'DM Mono',monospace;font-size:9px;color:var(--slate-lt);margin-top:12px;}
+.ctag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.ctitle{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+.cbody{font-size:12px;color:var(--slate);line-height:1.6;}
+.cbody strong{color:var(--navy);}
+.area-block{margin-bottom:2px;border:1px solid var(--border);overflow:hidden;}
+.area-header{background:var(--navy);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;}
+.area-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--white);}
+.area-tier{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);}
+.area-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);}
+.area-col{background:var(--white);padding:16px 18px;}
+.area-col-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.area-col-body{font-size:12px;color:var(--slate);line-height:1.65;}
+.area-col-body strong{color:var(--navy);}
+.bullet{display:flex;gap:8px;margin-bottom:6px;}
+.bullet::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:6px;flex-shrink:0;}
+.src{font-family:'DM Mono',monospace;font-size:9px;color:var(--slate-lt);margin-top:12px;}
 .footer{text-align:center;padding:32px 0;font-family:'DM Mono',monospace;font-size:9px;color:var(--slate-lt);letter-spacing:.1em;}
-@media(max-width:700px){.card-grid,.card-grid.two{grid-template-columns:1fr;}.page-title{font-size:28px;}}
+@media(max-width:768px){.cg,.cg.two,.area-cols{grid-template-columns:1fr;}.pt{font-size:28px;}}
 </style>
 </head>
 <body>
@@ -47,165 +60,366 @@ tr.hl td{background:rgba(29,158,117,0.04);}
   <div class="logo-row"><div class="logo-rule"></div><span class="logo-inv">Investments</span><div class="logo-rule"></div></div>
 </div>
 
-<h1 class="page-title">East Coast Family Office Residence Guide</h1>
-<p class="page-sub">Strategic residence intelligence for mature family office relationships &mdash; Palm Beach Island, Port Royal Naples, Jupiter Island</p>
+<h1 class="pt">SW + SE Florida Family Office Residence Guide</h1>
+<p class="ps">Strategic residence intelligence for mature family office relationships &mdash; from Cape Coral to Palm Beach Island</p>
 
-<!-- 1. PRESTIGE LADDER -->
+<!-- ═══ 1. PRESTIGE LADDER ═══ -->
 <div class="section">
   <div class="stag">Section 1 &mdash; The Prestige Ladder</div>
-  <h2 class="sh">Where Wealth Lives on the East Coast</h2>
-  <p class="ssub">Florida's three premier residential corridors ranked by exclusivity, privacy, and institutional wealth density.</p>
+  <h2 class="sh">Six Tiers of Florida Residential Prestige</h2>
+  <p class="ssub">Every Florida market signals differently. Understanding where a client lives &mdash; or aspires to live &mdash; tells you everything about their capital, their network, and how to approach the relationship.</p>
   <table>
-    <thead><tr><th>Tier</th><th>Market</th><th>Median Lot</th><th>Profile</th><th>Signal</th></tr></thead>
+    <thead><tr><th>Tier</th><th>Market</th><th>Net Worth Range</th><th>Entry Point</th><th>Signal</th></tr></thead>
     <tbody>
-      <tr class="hl"><td class="gold">I</td><td>Palm Beach Island</td><td class="mono">$15M&ndash;$80M+</td><td>Dynastic wealth, hedge fund principals, art collectors</td><td>Maximum visibility &mdash; "I have arrived"</td></tr>
-      <tr><td class="gold">II</td><td>Port Royal, Naples</td><td class="mono">$12M&ndash;$45M</td><td>Operating CEOs, PE partners, family trusts</td><td>Ultra-private &mdash; "I don't need you to know"</td></tr>
-      <tr><td class="gold">III</td><td>Jupiter Island</td><td class="mono">$8M&ndash;$35M</td><td>Sports principals, tech wealth, quiet billionaires</td><td>Stealth &mdash; "You'll never find the driveway"</td></tr>
+      <tr class="hl"><td class="gold">I &mdash; Global</td><td>Palm Beach Island</td><td class="mono">$500M &ndash; $10B+</td><td class="mono">$25M+</td><td>Maximum visibility &mdash; "I have arrived"</td></tr>
+      <tr><td class="gold">II &mdash; Gulf</td><td>Port Royal, Naples</td><td class="mono">$150M &ndash; $1B</td><td class="mono">$15M+</td><td>Ultra-private &mdash; "I don't need you to know"</td></tr>
+      <tr><td class="gold">III &mdash; Quiet</td><td>Jupiter Island</td><td class="mono">$50M &ndash; $500M</td><td class="mono">$8M+</td><td>Stealth wealth &mdash; "You'll never find the driveway"</td></tr>
+      <tr><td class="gold">IV &mdash; Privacy</td><td>Casey Key / Siesta Key</td><td class="mono">$40M &ndash; $200M</td><td class="mono">$5M+</td><td>Old Sarasota &mdash; "We were here before you noticed"</td></tr>
+      <tr><td class="gold">V &mdash; Naples Entry</td><td>Vanderbilt Beach / Pelican Bay / Bonita</td><td class="mono">$25M &ndash; $100M</td><td class="mono">$3M+</td><td>Naples lifestyle without Port Royal price</td></tr>
+      <tr><td class="gold">VI &mdash; Regional</td><td>Cape Coral / Longboat Key / Bonita Beach</td><td class="mono">$15M &ndash; $60M</td><td class="mono">$1.5M+</td><td>Waterfront operators &mdash; building, not displaying</td></tr>
     </tbody>
   </table>
-  <div class="source">Sources: Douglas Elliman 2025, Sotheby's Palm Beach Q4 2025, Naples Area Board of Realtors</div>
+  <div class="src">Sources: Douglas Elliman 2025, Sotheby's International Realty, Naples Area Board of Realtors, Sarasota Association of Realtors</div>
 </div>
 
-<!-- 2. LOT ADDRESSES -->
+<!-- ═══ 2. SW FLORIDA DEEP DIVES ═══ -->
 <div class="section">
-  <div class="stag">Section 2 &mdash; Trophy Lot Addresses</div>
-  <h2 class="sh">Eight Addresses That Define East Coast Prestige</h2>
-  <p class="ssub">These streets carry outsized social capital. Owning here isn't real estate &mdash; it's membership.</p>
-  <table>
-    <thead><tr><th>#</th><th>Address / Road</th><th>Market</th><th>Why It Matters</th><th>Recent Comp</th></tr></thead>
-    <tbody>
-      <tr><td class="mono">1</td><td>South Ocean Boulevard</td><td>Palm Beach</td><td>Billionaire's Row &mdash; oceanfront from Mar-a-Lago south to Sloan's Curve</td><td class="mono">$170M (2024)</td></tr>
-      <tr><td class="mono">2</td><td>North County Road</td><td>Palm Beach</td><td>Old guard &mdash; Kennedy compound corridor, Flagler Museum proximity</td><td class="mono">$42M (2024)</td></tr>
-      <tr><td class="mono">3</td><td>Wells Road</td><td>Palm Beach</td><td>Lakefront on Intracoastal &mdash; deepwater docks, sunset exposure</td><td class="mono">$28M (2025)</td></tr>
-      <tr><td class="mono">4</td><td>Gordon Drive</td><td>Port Royal</td><td>The apex of Port Royal &mdash; every lot is direct Gulf waterfront</td><td class="mono">$60M (2024)</td></tr>
-      <tr><td class="mono">5</td><td>Galleon Drive</td><td>Port Royal</td><td>Deep harbor &mdash; 80-ft yacht dockage, protected from Gulf storms</td><td class="mono">$48M (2025)</td></tr>
-      <tr><td class="mono">6</td><td>Rum Row</td><td>Port Royal</td><td>Named for Prohibition smuggling &mdash; most storied street in Naples</td><td class="mono">$35M (2024)</td></tr>
-      <tr><td class="mono">7</td><td>South Beach Road</td><td>Jupiter Island</td><td>Oceanfront compound corridor &mdash; Tiger Woods, Greg Norman nearby</td><td class="mono">$32M (2025)</td></tr>
-      <tr><td class="mono">8</td><td>Island Road</td><td>Jupiter Island</td><td>Intracoastal side &mdash; protected deepwater, yacht access to Bahamas</td><td class="mono">$22M (2024)</td></tr>
-    </tbody>
-  </table>
-  <div class="source">Sources: Palm Beach MLS, Naples MLS, Zillow, Realtor.com closed transactions 2024&ndash;2025</div>
-</div>
+  <div class="stag">Section 2 &mdash; Southwest Florida Markets</div>
+  <h2 class="sh">Five Markets Where VPI Operates</h2>
+  <p class="ssub">Each market has its own wealth profile, business network, and dining culture. These are the rooms where our LP relationships begin.</p>
 
-<!-- 3. SIGNAL BENEFITS -->
-<div class="section">
-  <div class="stag">Section 3 &mdash; Signal Benefits</div>
-  <h2 class="sh">What a Prestige Address Actually Buys</h2>
-  <div class="card-grid">
-    <div class="card"><div class="card-tag">Deal Flow</div><div class="card-title">Co-investment Access</div><div class="card-body">Your neighbor is the LP. Club deals and SPVs surface at the dock, not in a pitch deck.</div></div>
-    <div class="card"><div class="card-tag">Trust</div><div class="card-title">Credibility by Proximity</div><div class="card-body">Gordon Drive or South Ocean is a credential. It signals permanence and capital depth without a word spoken.</div></div>
-    <div class="card"><div class="card-tag">Network</div><div class="card-title">Club Membership Pipeline</div><div class="card-body">Everglades Club, Port Royal Club, Jupiter Island Club &mdash; the address is the first filter for membership.</div></div>
-    <div class="card"><div class="card-tag">Tax</div><div class="card-title">Domicile Optimization</div><div class="card-body">Florida residency eliminates state income tax. A $200M+ portfolio saves $10M+ annually vs. New York.</div></div>
-    <div class="card"><div class="card-tag">Privacy</div><div class="card-title">Homestead Protection</div><div class="card-body">Florida homestead protects the primary residence from creditors &mdash; unlimited value. Structural asset protection.</div></div>
-    <div class="card"><div class="card-tag">Legacy</div><div class="card-title">Generational Anchoring</div><div class="card-body">The compound becomes the family's gathering point for decades. Thanksgiving at the estate, not a hotel.</div></div>
+  <!-- Cape Coral -->
+  <div class="area-block">
+    <div class="area-header">
+      <span class="area-name">Cape Coral &middot; 238 Bayshore Drive</span>
+      <span class="area-tier">Tier VI &mdash; Regional</span>
+    </div>
+    <div class="area-cols">
+      <div class="area-col">
+        <div class="area-col-tag">Market Profile</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Net worth:</strong> $15M &ndash; $30M</div>
+          <div class="bullet"><strong>Buyer:</strong> Operating entrepreneurs, builders, marine industry principals</div>
+          <div class="bullet"><strong>Signal:</strong> Caloosahatchee deepwater &mdash; yacht dock + fishing + direct Gulf access</div>
+          <div class="bullet"><strong>VPI connection:</strong> 238 Bayshore is the Knight family estate &mdash; 5,324 SF on the river. Trade Point Industrial is 15 minutes away.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Business Networks</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Lee Building Industry Association</strong> &mdash; every GC, developer, and trade contractor in Lee County</div>
+          <div class="bullet"><strong>Cape Coral Construction Industry Association</strong> &mdash; permitting, zoning, development intel</div>
+          <div class="bullet"><strong>Edison &amp; Ford Estates Patrons</strong> &mdash; philanthropic anchor, donor galas, board access</div>
+          <div class="bullet"><strong>Rotary Club of Cape Coral</strong> &mdash; broad business networking, weekly meetings</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Dining</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Rumrunners</strong> &mdash; $80&ndash;$150/pp. Cape Harbour marina. Sunset waterfront. The Cape Coral power dinner.</div>
+          <div class="bullet"><strong>Tarpon Lodge</strong> &mdash; $100&ndash;$175/pp. Pine Island. Old Florida. Boat-accessible. Intimate.</div>
+          <div class="bullet"><strong>Fathoms</strong> &mdash; $75&ndash;$125/pp. Cape Coral Yacht Club area. Casual elevated seafood.</div>
+          <div class="bullet"><strong>The Nauti Mermaid</strong> &mdash; $50&ndash;$90/pp. Dock &amp; dine. The repeat lunch spot.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bonita Beach -->
+  <div class="area-block">
+    <div class="area-header">
+      <span class="area-name">Bonita Beach &middot; Bonita Bay</span>
+      <span class="area-tier">Tier V &mdash; Naples Entry</span>
+    </div>
+    <div class="area-cols">
+      <div class="area-col">
+        <div class="area-col-tag">Market Profile</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Net worth:</strong> $25M &ndash; $60M</div>
+          <div class="bullet"><strong>Buyer:</strong> Retired CEOs, Midwest wealth migrating south, golf-centric families</div>
+          <div class="bullet"><strong>Signal:</strong> Bonita Bay membership + beachfront = Naples lifestyle at 60% of the cost</div>
+          <div class="bullet"><strong>Entry:</strong> Bonita Bay estates from $3M. Barefoot Beach from $5M. Beach condos from $1.5M.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Business Networks</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Bonita Bay Club</strong> &mdash; 5 golf courses, full marina, 1,800+ members. The social hub of south Lee County.</div>
+          <div class="bullet"><strong>Ritz-Carlton Tiburon Golf</strong> &mdash; corporate outings, client entertainment, membership reciprocity</div>
+          <div class="bullet"><strong>Bonita Springs Area Chamber</strong> &mdash; commercial development, zoning, local government access</div>
+          <div class="bullet"><strong>SWFL Community Foundation</strong> &mdash; donor-advised funds, philanthropic visibility</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Dining</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>BALEEN at LaPlaya</strong> &mdash; $150&ndash;$250/pp. Beachfront. The Bonita/Naples power dinner. Jacket optional.</div>
+          <div class="bullet"><strong>Roy's</strong> &mdash; $100&ndash;$175/pp. Hawaiian fusion. Bonita Springs. Consistent, professional.</div>
+          <div class="bullet"><strong>Backwater Jacks</strong> &mdash; $60&ndash;$100/pp. Bonita Bay marina. Casual waterfront. Repeat meetings.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Longboat Key -->
+  <div class="area-block">
+    <div class="area-header">
+      <span class="area-name">Longboat Key</span>
+      <span class="area-tier">Tier VI &mdash; Regional</span>
+    </div>
+    <div class="area-cols">
+      <div class="area-col">
+        <div class="area-col-tag">Market Profile</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Net worth:</strong> $30M &ndash; $75M</div>
+          <div class="bullet"><strong>Buyer:</strong> Art patrons, Ringling donors, seasonal Northeasterners with Sarasota ties</div>
+          <div class="bullet"><strong>Signal:</strong> Barrier island exclusivity without Jupiter Island price. Gulf + bay exposure.</div>
+          <div class="bullet"><strong>Entry:</strong> Beachfront estates from $5M. Bay-side from $3M. Colony Beach area premium.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Business Networks</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Longboat Key Club</strong> &mdash; golf, tennis, marina. The island's social anchor. 600+ members.</div>
+          <div class="bullet"><strong>Ringling Museum Patrons</strong> &mdash; arts philanthropy, donor circles, gala circuit</div>
+          <div class="bullet"><strong>Sarasota Yacht Club</strong> &mdash; 900+ members. Deepwater. Social + racing. Business networking.</div>
+          <div class="bullet"><strong>Tiger 21 Sarasota</strong> &mdash; peer-to-peer $10M+ investor network. Monthly portfolio reviews.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Dining</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Euphemia Haye</strong> &mdash; $125&ndash;$200/pp. Longboat Key institution. 45 years. Dessert room upstairs.</div>
+          <div class="bullet"><strong>Mar Vista Dockside</strong> &mdash; $75&ndash;$125/pp. Boat-accessible. Old Florida waterfront. Casual power lunch.</div>
+          <div class="bullet"><strong>Shore</strong> &mdash; $100&ndash;$175/pp. St. Armands Circle. Contemporary seafood. Date night or client dinner.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Casey Key -->
+  <div class="area-block">
+    <div class="area-header">
+      <span class="area-name">Casey Key</span>
+      <span class="area-tier">Tier IV &mdash; Privacy</span>
+    </div>
+    <div class="area-cols">
+      <div class="area-col">
+        <div class="area-col-tag">Market Profile</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Net worth:</strong> $40M &ndash; $100M</div>
+          <div class="bullet"><strong>Buyer:</strong> Legacy families, author/artist retreats, offshore trust principals</div>
+          <div class="bullet"><strong>Signal:</strong> Maximum Gulf Coast privacy. No commercial district. No bridge traffic. Stephen King's compound is here.</div>
+          <div class="bullet"><strong>Entry:</strong> Beachfront compounds from $8M. Bay-side from $4M. Only ~180 residences on the key.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Business Networks</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Sarasota Yacht Club</strong> &mdash; the closest institutional network to Casey Key residents</div>
+          <div class="bullet"><strong>Tiger 21 Sarasota</strong> &mdash; $10M+ peer investor network. Monthly meetings.</div>
+          <div class="bullet"><strong>Community Foundation of Sarasota County</strong> &mdash; $400M+ in assets. Board access = deep network.</div>
+          <div class="bullet"><strong>Van Wezel Foundation</strong> &mdash; performing arts patronage. Gala season networking.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Dining</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Bijou Caf&eacute;</strong> &mdash; $100&ndash;$175/pp. Downtown Sarasota. French-continental. The Sarasota establishment dinner.</div>
+          <div class="bullet"><strong>Indigenous</strong> &mdash; $90&ndash;$150/pp. Farm-to-table. James Beard semifinalist. Creative, memorable.</div>
+          <div class="bullet"><strong>Casey Key Fish House</strong> &mdash; $50&ndash;$90/pp. The local's local. Osprey waterfront. Casual.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Port Royal -->
+  <div class="area-block">
+    <div class="area-header">
+      <span class="area-name">Port Royal, Naples</span>
+      <span class="area-tier">Tier II &mdash; Gulf Apex</span>
+    </div>
+    <div class="area-cols">
+      <div class="area-col">
+        <div class="area-col-tag">Market Profile</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Net worth:</strong> $150M &ndash; $1B+</div>
+          <div class="bullet"><strong>Buyer:</strong> PE partners, family trust principals, Fortune 500 retirees</div>
+          <div class="bullet"><strong>Signal:</strong> The most exclusive gated community on the Gulf Coast. 500 homes. Direct Gulf deepwater. No bridges.</div>
+          <div class="bullet"><strong>Entry:</strong> Gordon Drive from $30M. Galleon Drive from $20M. Rum Row from $15M. Recent comps to $60M.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Business Networks</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Port Royal Club</strong> &mdash; ~$200K initiation. Sponsor required. The inner circle of Naples wealth.</div>
+          <div class="bullet"><strong>Naples Winter Wine Festival</strong> &mdash; $250M+ raised. $25K table minimum. Invitation only. A deal-flow machine.</div>
+          <div class="bullet"><strong>Collier County CEO Forum</strong> &mdash; operating executives across SWFL industries</div>
+          <div class="bullet"><strong>Naples Yacht Club</strong> &mdash; ~$100K initiation. Deepwater Gulf. Social + business.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Dining</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>The Grill at The Ritz</strong> &mdash; $200&ndash;$350/pp. Power dinner. Jacket suggested. The Naples closer.</div>
+          <div class="bullet"><strong>Barbatella</strong> &mdash; $100&ndash;$175/pp. 3rd Street South. Walk from Port Royal. Relaxed Italian.</div>
+          <div class="bullet"><strong>The Bay House</strong> &mdash; $125&ndash;$200/pp. Gulf waterfront. Sunset views. Window table essential.</div>
+          <div class="bullet"><strong>USS Nemo</strong> &mdash; $90&ndash;$150/pp. Tiny. 12 tables. Reservations weeks out. Worth it.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- 4. WEALTH TIERS -->
+<!-- ═══ 3. SE FLORIDA MARKETS ═══ -->
 <div class="section">
-  <div class="stag">Section 4 &mdash; Wealth Tier Mapping</div>
-  <h2 class="sh">Which Market Fits Which Client</h2>
-  <table>
-    <thead><tr><th>Net Worth</th><th>Annual Income</th><th>Recommended Market</th><th>Entry Point</th><th>Typical Buyer</th></tr></thead>
-    <tbody>
-      <tr><td class="mono">$50M&ndash;$150M</td><td class="mono">$5M&ndash;$15M</td><td>Jupiter Island</td><td class="mono">$8M&ndash;$15M</td><td>First-gen tech, sports, professional athletes</td></tr>
-      <tr><td class="mono">$150M&ndash;$500M</td><td class="mono">$15M&ndash;$50M</td><td>Port Royal, Naples</td><td class="mono">$15M&ndash;$35M</td><td>PE partners, operating CEOs, family trusts</td></tr>
-      <tr class="hl"><td class="mono">$500M+</td><td class="mono">$50M+</td><td>Palm Beach Island</td><td class="mono">$25M&ndash;$80M+</td><td>Hedge fund principals, dynastic families</td></tr>
-    </tbody>
-  </table>
+  <div class="stag">Section 3 &mdash; Southeast Florida Markets</div>
+  <h2 class="sh">Palm Beach Island &amp; Jupiter Island</h2>
+  <p class="ssub">The global tier. These are the addresses that define East Coast wealth and open doors to the largest capital relationships in the country.</p>
+
+  <div class="area-block">
+    <div class="area-header">
+      <span class="area-name">Palm Beach Island</span>
+      <span class="area-tier">Tier I &mdash; Global</span>
+    </div>
+    <div class="area-cols">
+      <div class="area-col">
+        <div class="area-col-tag">Market Profile</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Net worth:</strong> $500M &ndash; $10B+</div>
+          <div class="bullet"><strong>Trophy streets:</strong> South Ocean Blvd ($170M comp), North County Rd ($42M), Wells Rd ($28M)</div>
+          <div class="bullet"><strong>Signal:</strong> Maximum visibility. Dynastic wealth, hedge fund principals, art collectors.</div>
+          <div class="bullet"><strong>Inventory:</strong> ~85 active listings. 120&ndash;180 days on market. PBI airport 10 min.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Business Networks</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>The Everglades Club</strong> &mdash; by invitation only. Old money. The ultimate Palm Beach credential.</div>
+          <div class="bullet"><strong>Bath &amp; Tennis Club</strong> &mdash; ~$250K. Younger wealth, families. Social connector.</div>
+          <div class="bullet"><strong>Palm Beach Civic Association</strong> &mdash; zoning, development. Institutional decisions.</div>
+          <div class="bullet"><strong>Worth Avenue Association</strong> &mdash; retail + commercial. Real estate + luxury brand overlap.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Dining</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Buccan</strong> &mdash; $150&ndash;$250/pp. Casual-elevated first meeting. Book 2+ weeks in season.</div>
+          <div class="bullet"><strong>Caf&eacute; Boulud</strong> &mdash; $175&ndash;$300/pp. Michelin-level. Brazilian Court Hotel. Valet essential.</div>
+          <div class="bullet"><strong>Renato's</strong> &mdash; $120&ndash;$200/pp. Old guard. Worth Avenue courtyard. Request garden.</div>
+          <div class="bullet"><strong>Caf&eacute; L'Europe</strong> &mdash; $150&ndash;$250/pp. 45 years on Worth Avenue. Institution.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-block">
+    <div class="area-header">
+      <span class="area-name">Jupiter Island</span>
+      <span class="area-tier">Tier III &mdash; Quiet</span>
+    </div>
+    <div class="area-cols">
+      <div class="area-col">
+        <div class="area-col-tag">Market Profile</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Net worth:</strong> $50M &ndash; $500M</div>
+          <div class="bullet"><strong>Trophy streets:</strong> South Beach Rd ($32M comp), Island Rd ($22M)</div>
+          <div class="bullet"><strong>Signal:</strong> Stealth wealth. Tiger Woods, Greg Norman. Private island, private everything.</div>
+          <div class="bullet"><strong>Inventory:</strong> ~30 active. 100&ndash;160 DOM. PBI airport 25 min. Bahamas by yacht.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Business Networks</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Jupiter Island Club</strong> &mdash; by invitation. Island residents only. ~300 members. Maximum exclusivity.</div>
+          <div class="bullet"><strong>Seminole Golf Club</strong> &mdash; by invitation. Top 10 US course. Pinnacle golf credential.</div>
+          <div class="bullet"><strong>Jupiter Medical Center Foundation</strong> &mdash; philanthropic anchor. Board = social credibility.</div>
+          <div class="bullet"><strong>Tiger 21 Palm Beach</strong> &mdash; $10M+ peer network. Active chapter. Monthly reviews.</div>
+        </div>
+      </div>
+      <div class="area-col">
+        <div class="area-col-tag">Dining</div>
+        <div class="area-col-body">
+          <div class="bullet"><strong>Lefkes</strong> &mdash; $125&ndash;$200/pp. Greek-Mediterranean. Harbourside. Boat accessible.</div>
+          <div class="bullet"><strong>Sinclair's Ocean Grill</strong> &mdash; $100&ndash;$175/pp. Jupiter Beach Resort. Casual power lunch.</div>
+          <div class="bullet"><strong>1000 North</strong> &mdash; $150&ndash;$250/pp. Jupiter waterfront. Michael Jordan's spot. Reserve early.</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- 5. ADDRESS MATRIX -->
+<!-- ═══ 4. VPI STRATEGIC VIEW ═══ -->
 <div class="section">
-  <div class="stag">Section 5 &mdash; Address Comparison Matrix</div>
+  <div class="stag">Section 4 &mdash; VPI Strategic View</div>
+  <h2 class="sh">How We Use This Intelligence</h2>
+  <p class="ssub">The residence conversation is the gateway to the investment conversation. This guide exists because the most productive capital relationships begin with personal credibility.</p>
+  <div class="cg two">
+    <div class="card"><div class="ctag">Relationship Entry</div><div class="cbody">A family office considering Port Royal or Palm Beach is signaling permanence in Florida. That opens the door to conversations about local operating assets &mdash; Trade Point Industrial, Lake Shadroe Resort, Turquoise Bay &mdash; exactly what VPI builds.</div></div>
+    <div class="card"><div class="ctag">Capital Alignment</div><div class="cbody">The client who buys Gordon Drive has <strong>$15M+</strong> of deployable capital beyond the residence. Our flex industrial, marina, and hospitality projects are sized for exactly this tier of LP.</div></div>
+    <div class="card"><div class="ctag">Trust Architecture</div><div class="cbody">Helping navigate the residence purchase &mdash; without selling anything &mdash; builds the kind of trust that converts to <strong>$5M+ LP commitments</strong> over 12&ndash;24 months.</div></div>
+    <div class="card"><div class="ctag">Network Compounding</div><div class="cbody">One introduction at the Port Royal Club leads to three more at the Everglades. The <strong>residence is the node</strong>. The investment relationship is the edge. The network is the asset.</div></div>
+  </div>
+</div>
+
+<!-- ═══ 5. SIGNAL BENEFITS ═══ -->
+<div class="section">
+  <div class="stag">Section 5 &mdash; Signal Benefits</div>
+  <h2 class="sh">What a Prestige Address Actually Buys</h2>
+  <div class="cg">
+    <div class="card"><div class="ctag">Deal Flow</div><div class="ctitle">Co-investment Access</div><div class="cbody">Your neighbor is the LP. Club deals and SPVs surface at the dock, not in a pitch deck.</div></div>
+    <div class="card"><div class="ctag">Trust</div><div class="ctitle">Credibility by Proximity</div><div class="cbody">Gordon Drive or South Ocean is a credential. It signals permanence and capital depth without a word spoken.</div></div>
+    <div class="card"><div class="ctag">Network</div><div class="ctitle">Club Membership Pipeline</div><div class="cbody">Everglades Club, Port Royal Club, Jupiter Island Club &mdash; the address is the first filter for membership.</div></div>
+    <div class="card"><div class="ctag">Tax</div><div class="ctitle">Domicile Optimization</div><div class="cbody">Florida residency eliminates state income tax. A $200M+ portfolio saves <strong>$10M+ annually</strong> vs. New York.</div></div>
+    <div class="card"><div class="ctag">Privacy</div><div class="ctitle">Homestead Protection</div><div class="cbody">Florida homestead protects the primary residence from creditors &mdash; unlimited value. Structural asset protection.</div></div>
+    <div class="card"><div class="ctag">Legacy</div><div class="ctitle">Generational Anchoring</div><div class="cbody">The compound becomes the family's gathering point for decades. Memory infrastructure.</div></div>
+  </div>
+</div>
+
+<!-- ═══ 6. ADDRESS COMPARISON MATRIX ═══ -->
+<div class="section">
+  <div class="stag">Section 6 &mdash; Address Comparison Matrix</div>
   <h2 class="sh">Side-by-Side Market Intelligence</h2>
   <table>
-    <thead><tr><th>Factor</th><th>Palm Beach Island</th><th>Port Royal Naples</th><th>Jupiter Island</th></tr></thead>
+    <thead><tr><th>Factor</th><th>Palm Beach</th><th>Port Royal</th><th>Jupiter Island</th><th>Casey Key</th><th>Cape Coral</th></tr></thead>
     <tbody>
-      <tr><td>Median home price</td><td class="mono">$12.8M</td><td class="mono">$16.2M</td><td class="mono">$9.4M</td></tr>
-      <tr><td>Median lot price</td><td class="mono">$15M&ndash;$80M</td><td class="mono">$12M&ndash;$45M</td><td class="mono">$8M&ndash;$35M</td></tr>
-      <tr><td>Active inventory</td><td class="mono">~85</td><td class="mono">~25</td><td class="mono">~30</td></tr>
-      <tr><td>Days on market</td><td class="mono">120&ndash;180</td><td class="mono">90&ndash;150</td><td class="mono">100&ndash;160</td></tr>
-      <tr><td>Privacy level</td><td>Moderate &mdash; social scene</td><td>Very high &mdash; gated</td><td>Maximum &mdash; private island</td></tr>
-      <tr><td>Yacht access</td><td>Intracoastal &mdash; bridge limited</td><td>Direct Gulf &mdash; no bridges</td><td>Intracoastal &mdash; ocean inlet</td></tr>
-      <tr><td>Airport</td><td>PBI &mdash; 10 min</td><td>APF (private) &mdash; 15 min</td><td>PBI &mdash; 25 min</td></tr>
-      <tr><td>Cultural scene</td><td>World-class &mdash; Worth Avenue</td><td>Quiet &mdash; 5th Ave nearby</td><td>Minimal &mdash; by design</td></tr>
+      <tr><td>Median home</td><td class="mono">$12.8M</td><td class="mono">$16.2M</td><td class="mono">$9.4M</td><td class="mono">$6.8M</td><td class="mono">$850K</td></tr>
+      <tr><td>Trophy lot</td><td class="mono">$15&ndash;80M</td><td class="mono">$12&ndash;45M</td><td class="mono">$8&ndash;35M</td><td class="mono">$5&ndash;20M</td><td class="mono">$1&ndash;5M</td></tr>
+      <tr><td>Privacy</td><td>Moderate</td><td>Very high</td><td>Maximum</td><td>Maximum</td><td>Moderate</td></tr>
+      <tr><td>Yacht access</td><td>Intracoastal</td><td>Direct Gulf</td><td>Inlet/ocean</td><td>Gulf/ICW</td><td>River/Gulf</td></tr>
+      <tr><td>Airport</td><td class="mono">PBI 10m</td><td class="mono">APF 15m</td><td class="mono">PBI 25m</td><td class="mono">SRQ 30m</td><td class="mono">RSW 25m</td></tr>
+      <tr><td>Culture</td><td>World-class</td><td>Quiet</td><td>Minimal</td><td>Sarasota arts</td><td>Emerging</td></tr>
+      <tr><td>VPI presence</td><td>LP target</td><td>LP target</td><td>LP target</td><td>LP target</td><td class="gold">HQ &middot; 238 Bayshore</td></tr>
     </tbody>
   </table>
-  <div class="source">Sources: Douglas Elliman, Sotheby's International Realty, Naples Area Board of Realtors Q4 2025</div>
+  <div class="src">Sources: Douglas Elliman, Sotheby's, Naples Board of Realtors, Sarasota Association of Realtors Q4 2025</div>
 </div>
 
-<!-- 6. VPI STRATEGIC VIEW -->
-<div class="section">
-  <div class="stag">Section 6 &mdash; VPI Strategic View</div>
-  <h2 class="sh">How We Use This Intelligence</h2>
-  <p class="ssub">The residence conversation is the gateway to the investment conversation.</p>
-  <div class="card-grid two">
-    <div class="card"><div class="card-tag">Relationship Entry</div><div class="card-body">A family office considering Palm Beach or Port Royal is signaling permanence in Florida. That opens the door to conversations about local operating assets &mdash; exactly what VPI builds.</div></div>
-    <div class="card"><div class="card-tag">Capital Alignment</div><div class="card-body">The client who buys Gordon Drive has $15M+ of deployable capital beyond the residence. Our projects are sized for exactly this tier of LP.</div></div>
-    <div class="card"><div class="card-tag">Trust Architecture</div><div class="card-body">Helping navigate the residence purchase &mdash; without selling anything &mdash; builds trust that converts to $5M+ LP commitments over 12&ndash;24 months.</div></div>
-    <div class="card"><div class="card-tag">Network Compounding</div><div class="card-body">One introduction at the Port Royal Club leads to three more at the Everglades. The residence is the node. The investment relationship is the edge.</div></div>
-  </div>
-</div>
-
-<!-- 7. CLUBS & INSTITUTIONS -->
+<!-- ═══ 7. CLUBS & INSTITUTIONS MASTER LIST ═══ -->
 <div class="section">
   <div class="stag">Section 7 &mdash; Clubs &amp; Institutions</div>
-  <h2 class="sh">The Membership Layer</h2>
-  <p class="ssub">Club membership is the second credential after the address.</p>
+  <h2 class="sh">The Complete Membership Map</h2>
+  <p class="ssub">Club membership is the second credential after the address. Organized by market and strategic value.</p>
   <table>
     <thead><tr><th>Club</th><th>Market</th><th>Initiation</th><th>Profile</th><th>Strategic Value</th></tr></thead>
     <tbody>
-      <tr class="hl"><td>The Everglades Club</td><td>Palm Beach</td><td class="mono">By invitation</td><td>Old money, Flagler-era families</td><td>The ultimate Palm Beach credential</td></tr>
-      <tr><td>Bath &amp; Tennis Club</td><td>Palm Beach</td><td class="mono">~$250K</td><td>Younger wealth, families</td><td>Social connector &mdash; events, galas</td></tr>
-      <tr><td>Palm Beach Country Club</td><td>Palm Beach</td><td class="mono">~$150K</td><td>Golf-focused, business</td><td>Deal flow over 18 holes</td></tr>
-      <tr class="hl"><td>Port Royal Club</td><td>Naples</td><td class="mono">~$200K</td><td>Port Royal residents + select</td><td>Inner circle of Naples wealth</td></tr>
-      <tr><td>Naples Yacht Club</td><td>Naples</td><td class="mono">~$100K</td><td>Boating families, Gulf access</td><td>Waterfront networking</td></tr>
-      <tr><td>The Club Pelican Bay</td><td>Naples</td><td class="mono">~$125K</td><td>Golf + beach + social</td><td>Broad Naples business network</td></tr>
-      <tr class="hl"><td>Jupiter Island Club</td><td>Jupiter Island</td><td class="mono">By invitation</td><td>Island residents only</td><td>Maximum exclusivity &mdash; ~300 members</td></tr>
-      <tr><td>Seminole Golf Club</td><td>Juno Beach</td><td class="mono">By invitation</td><td>Elite golf &mdash; top 10 US</td><td>Pinnacle golf credential</td></tr>
+      <tr class="hl"><td>The Everglades Club</td><td>Palm Beach</td><td class="mono">Invitation</td><td>Old money, Flagler-era</td><td>Ultimate PB credential</td></tr>
+      <tr><td>Bath &amp; Tennis Club</td><td>Palm Beach</td><td class="mono">~$250K</td><td>Younger wealth, families</td><td>Social connector</td></tr>
+      <tr><td>Seminole Golf Club</td><td>Juno Beach</td><td class="mono">Invitation</td><td>Top 10 US course</td><td>Pinnacle golf</td></tr>
+      <tr class="hl"><td>Jupiter Island Club</td><td>Jupiter</td><td class="mono">Invitation</td><td>Island residents only</td><td>~300 members. Max exclusivity</td></tr>
+      <tr class="hl"><td>Port Royal Club</td><td>Naples</td><td class="mono">~$200K</td><td>Port Royal residents</td><td>Inner circle Naples wealth</td></tr>
+      <tr><td>Naples Yacht Club</td><td>Naples</td><td class="mono">~$100K</td><td>Boating families</td><td>Waterfront networking</td></tr>
+      <tr><td>Club Pelican Bay</td><td>Naples</td><td class="mono">~$125K</td><td>Golf + beach + social</td><td>Broad Naples network</td></tr>
+      <tr><td>Bonita Bay Club</td><td>Bonita</td><td class="mono">~$75K</td><td>5 courses, marina</td><td>South Lee County hub</td></tr>
+      <tr><td>Longboat Key Club</td><td>Longboat</td><td class="mono">~$50K</td><td>Golf, tennis, marina</td><td>Island social anchor</td></tr>
+      <tr><td>Sarasota Yacht Club</td><td>Sarasota</td><td class="mono">~$40K</td><td>900+ members</td><td>Deepwater + business</td></tr>
+      <tr><td>Tiger 21</td><td>Regional</td><td class="mono">$30K/yr</td><td>$10M+ investors</td><td>Peer portfolio reviews</td></tr>
     </tbody>
   </table>
-  <div class="source">Sources: Club websites, Palm Beach Daily News, Bloomberg Wealth (2025)</div>
+  <div class="src">Sources: Club websites, Palm Beach Daily News, Naples Daily News, Bloomberg Wealth (2025)</div>
 </div>
 
-<!-- 8. BUSINESS NETWORKS -->
-<div class="section">
-  <div class="stag">Section 8 &mdash; Business Networks</div>
-  <h2 class="sh">Where Deals Actually Happen</h2>
-  <div class="card-grid">
-    <div class="card"><div class="card-tag">Palm Beach</div><div class="card-title">Palm Beach Civic Association</div><div class="card-body">Zoning, development, preservation. The room where institutional decisions about the island are made.</div></div>
-    <div class="card"><div class="card-tag">Palm Beach</div><div class="card-title">Worth Avenue Association</div><div class="card-body">Retail and commercial interests on the most valuable shopping street in the Southeast.</div></div>
-    <div class="card"><div class="card-tag">Naples</div><div class="card-title">Naples Winter Wine Festival</div><div class="card-body">$250M+ raised since 2001. The charity event that is actually a deal-flow machine. $25K table minimum.</div></div>
-    <div class="card"><div class="card-tag">Naples</div><div class="card-title">Collier County CEO Forum</div><div class="card-body">Operating executives across SWFL. Less exclusive than Port Royal Club but higher deal velocity.</div></div>
-    <div class="card"><div class="card-tag">Jupiter</div><div class="card-title">Jupiter Medical Center Foundation</div><div class="card-body">The philanthropic anchor of Jupiter Island society. Board membership = social credibility.</div></div>
-    <div class="card"><div class="card-tag">Regional</div><div class="card-title">Tiger 21</div><div class="card-body">Peer-to-peer network for $10M+ investors. Active chapters in Palm Beach + Naples. Monthly meetings.</div></div>
-  </div>
-</div>
-
-<!-- 9. FINE DINING -->
-<div class="section">
-  <div class="stag">Section 9 &mdash; Fine Dining</div>
-  <h2 class="sh">Where to Take the Meeting</h2>
-  <p class="ssub">The restaurant is the conference room.</p>
-  <table>
-    <thead><tr><th>Restaurant</th><th>Market</th><th>Price</th><th>Best For</th><th>Note</th></tr></thead>
-    <tbody>
-      <tr class="hl"><td>Buccan</td><td>Palm Beach</td><td class="mono">$150&ndash;$250/pp</td><td>Casual-elevated first meeting</td><td>Book 2+ weeks in season</td></tr>
-      <tr><td>Renato's</td><td>Palm Beach</td><td class="mono">$120&ndash;$200/pp</td><td>Old guard dinner</td><td>Worth Ave courtyard &mdash; request garden</td></tr>
-      <tr><td>Cafe Boulud</td><td>Palm Beach</td><td class="mono">$175&ndash;$300/pp</td><td>Michelin-level impression</td><td>Brazilian Court Hotel &mdash; valet essential</td></tr>
-      <tr><td>Cafe L'Europe</td><td>Palm Beach</td><td class="mono">$150&ndash;$250/pp</td><td>Continental classic</td><td>45 years on Worth Avenue &mdash; institution</td></tr>
-      <tr class="hl"><td>The Grill at The Ritz</td><td>Naples</td><td class="mono">$200&ndash;$350/pp</td><td>Power dinner, formal</td><td>Ritz-Carlton &mdash; jacket suggested</td></tr>
-      <tr><td>Barbatella</td><td>Naples</td><td class="mono">$100&ndash;$175/pp</td><td>Relaxed Italian, repeats</td><td>3rd Street South &mdash; walk from Port Royal</td></tr>
-      <tr><td>The Bay House</td><td>Naples</td><td class="mono">$125&ndash;$200/pp</td><td>Waterfront, sunset</td><td>Gulf views &mdash; request window</td></tr>
-      <tr class="hl"><td>Lefkes</td><td>Jupiter</td><td class="mono">$125&ndash;$200/pp</td><td>Greek-Med, waterfront</td><td>Harbourside &mdash; boat accessible</td></tr>
-      <tr><td>Sinclair's Ocean Grill</td><td>Jupiter</td><td class="mono">$100&ndash;$175/pp</td><td>Casual power lunch</td><td>Jupiter Beach Resort &mdash; relaxed dress</td></tr>
-    </tbody>
-  </table>
-  <div class="source">Sources: OpenTable, Resy, James Beard Foundation, local recommendations (2025)</div>
-</div>
-
-<div class="footer">Vantage Point Investments &middot; East Coast Family Office Residence Guide &middot; Confidential</div>
+<div class="footer">Vantage Point Investments &middot; SW + SE Florida Family Office Residence Guide &middot; Confidential</div>
 
 </div>
 </body>
